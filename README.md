@@ -12,6 +12,10 @@ tweetParser.js Parse an element containing a tweet and turn URLS, @user &amp; #h
 | hashtagClass | String | hashtag | css Class used for hashtags url in the tweet |
 | target | HTML attribute for <a> tags | _blank | target used for all <a> generated |
 
-#### Initialisation
+#### INITIALISATION
+
+
+### RESULT EXAMPLE
+![Result After parsing tweets](https://farm9.staticflickr.com/8670/15852276268_221f9f8b85_o.png)
 
 
