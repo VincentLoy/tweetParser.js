@@ -3,6 +3,8 @@ jquery.tweetParser
 
 tweetParser.js Parse an element containing a tweet and turn URLS, @user &amp; #hashtags into working urls
 
+
+
 #### PARAMETERS
 
 | Parameters | Type | default | description |
@@ -18,7 +20,22 @@ tweetParser.js Parse an element containing a tweet and turn URLS, @user &amp; #h
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.tweetParser.min.js"></script>
     
+##### Your tweet in your html document
 
+    <p class="tweets">This is my awesome text only tweet ! #web #twitter @twitter http://www.twitter.com/ !!</p>
+    
+##### getting started with tweetParser
+    
+    //basic usage
+    $("p.tweets").tweetParser();
+    
+    //With parameters
+    $("p.tweets").tweetParser({
+        urlClass : "tweet_link", //this is default
+        userClass : "tweet_user", //this is default
+        hashtagClass : "hashtag", //this is default
+        target : "_blank" //this is default
+    });
 
 #### RESULT EXAMPLE
 ![Result After parsing tweets](https://farm9.staticflickr.com/8670/15852276268_221f9f8b85_o.png)
