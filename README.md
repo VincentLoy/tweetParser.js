@@ -13,9 +13,12 @@ tweetParser.js Parse an element containing a tweet and turn URLS, @user &amp; #h
 | target | HTML attribute for <a> tags | _blank | target used for all <a> generated |
 
 #### INITIALISATION
-    ##### Add jquery lib and tweetParser.min.js to your HTML document
+##### Add jquery lib and tweetParser.min.js to your HTML document
+
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.tweetParser.min.js"></script>
+    
+
 
 #### RESULT EXAMPLE
 ![Result After parsing tweets](https://farm9.staticflickr.com/8670/15852276268_221f9f8b85_o.png)
