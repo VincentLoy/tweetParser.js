@@ -1,0 +1,30 @@
+body{
+    font-family: 'Arial', sans-serif;
+}
+h1{
+    font-weight: 300;
+    text-align: center;
+}
+.tweet{
+    background: #34495e;
+    padding: 15px 10px;
+    text-align: center;
+    display: block;
+    width: 500px;
+    line-height: 25px;
+    margin: 10px auto;
+    border-radius: 3px;
+    color: #fff;
+}
+
+.tweet_link{
+    color: #1abc9c;
+    text-decoration: none;
+}
+.tweet_user{
+    color: #ccc;
+    text-decoration: none;
+}
+.hashtag{
+    color: #f39c12;
+}
