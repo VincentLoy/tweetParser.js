@@ -1,7 +1,7 @@
 jquery.tweetParser
 ==================
 
-tweetParser.js Parse an element containing a tweet and turn URLS, @user &amp; #hashtags into working urls
+tweetParser.js Parse elements containing a tweets and turn URLS, @users &amp; #hashtags into working urls
 
 
 
