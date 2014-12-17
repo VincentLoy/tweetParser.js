@@ -12,7 +12,7 @@ tweetParser.js Parse elements containing a tweets and turn URLS, @users &amp; #h
 | urlClass  | String | tweet_link | css Class used for url in the tweet |
 | userClass | String | tweet_user | css Class used for @user profil url in the tweet |
 | hashtagClass | String | hashtag | css Class used for hashtags url in the tweet |
-| target | HTML attribute for <a> tags | _blank | target used for all <a> generated |
+| target | HTML attribute for anchor tags | _blank | target used for all <a> generated |
 
 #### INITIALISATION
 ##### Add jquery lib and tweetParser.min.js to your HTML document
