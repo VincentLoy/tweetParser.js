@@ -22,7 +22,8 @@
     "parse",
     "username",
     "hashtag",
-    "url"
+    "url",
+    "minimal"
   ],
   "license": "MIT",
   "ignore": [
