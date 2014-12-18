@@ -6,6 +6,7 @@ body{
 }
 header{
     background:#3498db;
+    border-bottom: 3px solid #3c759a;
 }
 h1{
     font-size: 35px;
@@ -14,8 +15,12 @@ h1{
     color: #fff;
     text-align: center;
 }
+.wp{
+    width: 960px;
+    margin: auto;
+}
 .tweet{
-    background: #34495e;
+    background: #3c759a;
     padding: 15px 10px;
     text-align: center;
     display: block;
@@ -24,6 +29,35 @@ h1{
     margin: 10px auto;
     border-radius: 3px;
     color: #fff;
+}
+
+.fork{
+    width: 230px;
+    margin: auto;
+    padding: 15px;
+    background: #3498db;
+    border-bottom: 3px solid #225779;
+    border-radius: 3px;
+}
+.fork img{
+    width: 50px;
+    float: left;
+    border-radius: 50%;
+}
+.fork h3{
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    margin-left: 60px;
+    font-size: 18px;
+}
+.fork h3 a{
+    display: block;
+    text-decoration: none;
+    color: #fff;
+}
+.fork h3 a:hover{
+    color: #7c97dd;
 }
 
 .tweet_link{
