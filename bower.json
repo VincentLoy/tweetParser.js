@@ -6,7 +6,10 @@
     "VincentLoy <vincent.loy1@gmail.com>"
   ],
   "description": "Parse Twitter Usernames, Hashtags and URLs Using jQuery",
-  "main": "dist/jquery.tweetParser.min.js",
+  "main": [
+    "dist/jquery.tweetParser.min.js",
+    "dev/jquery.tweetParser.js"
+  ],
   "moduleType": [
     "globals"
   ],
