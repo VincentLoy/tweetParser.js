@@ -1,0 +1,32 @@
+{
+  "name": "tweetParser.js",
+  "version": "1.0.0",
+  "homepage": "https://github.com/VincentLoy/jquery.tweetParser",
+  "authors": [
+    "VincentLoy <vincent.loy1@gmail.com>"
+  ],
+  "description": "Parse Twitter Usernames, Hashtags and URLs Using jQuery",
+  "main": "dist/jquery.tweetParser.min.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "jquery",
+    "plugin",
+    "twitter",
+    "tweet",
+    "parser",
+    "parse",
+    "username",
+    "hashtag",
+    "url"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
