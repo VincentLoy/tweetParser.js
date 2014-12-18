@@ -28,6 +28,8 @@
   "license": "MIT",
   "ignore": [
     "**/.*",
+    "dev/demo.js",
+    "dev/vendor/*",
     "node_modules",
     "bower_components",
     "*.md",
