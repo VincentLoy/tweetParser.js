@@ -29,7 +29,7 @@
   "ignore": [
     "**/.*",
     "dev/demo.js",
-    "dev/vendor/*",
+    "dev/vendor",
     "node_modules",
     "bower_components",
     "*.md",
