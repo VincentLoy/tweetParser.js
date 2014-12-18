@@ -15,6 +15,13 @@ tweetParser.js Parse elements containing a tweets and turn URLS, @users &amp; #h
 | target | HTML attribute for anchor tags | _blank | target used for all <a> generated |
 
 #### INITIALISATION
+
+##### You can install tweetParser.js with Bower
+if you want to use bower just type :
+```
+bower install jquery.tweet-parser
+```
+
 ##### Add jquery lib and tweetParser.min.js to your HTML document
 ```html
     <script src="js/jquery.min.js"></script>
