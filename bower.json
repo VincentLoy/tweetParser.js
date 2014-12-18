@@ -28,5 +28,11 @@
     "bower_components",
     "demo.css",
     "index.html"
-  ]
+  ],
+  "dependencies": {
+    "jquery": "~2.1.2"
+  },
+  "devDependencies": {
+    "jquery": "~2.1.2"
+  }
 }
