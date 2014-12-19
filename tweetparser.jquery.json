@@ -31,6 +31,6 @@
     "docs": "https://github.com/VincentLoy/jquery.tweetParser",
     "download": "https://github.com/VincentLoy/jquery.tweetParser/archive/master.zip",
     "dependencies": {
-        "jquery": ">=1.1"
+        "jquery": ">=1.6"
     }
 }
