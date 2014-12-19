@@ -1,5 +1,5 @@
 {
-    "name": "tweetParser.js",
+    "name": "tweetparser",
     "title": "tweetParser.js - Parse Twitter Usernames, Hashtags and URLs",
     "description": "tweetParser is a minimal jQuery plugin that automatically parses @usernames, #hashtags and URLs within your text and turns them into Twitter links by using regular expressions.",
     "keywords": [
