@@ -1,0 +1,36 @@
+{
+    "name": "tweetParser.js",
+    "title": "tweetParser.js - Parse Twitter Usernames, Hashtags and URLs",
+    "description": "tweetParser is a minimal jQuery plugin that automatically parses @usernames, #hashtags and URLs within your text and turns them into Twitter links by using regular expressions.",
+    "keywords": [
+        "twitter",
+		"tweet",
+        "parse",
+        "parser"
+    ],
+    "version": "1.0.1",
+    "author": {
+        "name": "Vincent Loy",
+        "url": "http://vincent-loy.fr/"
+    },
+    "maintainers": [
+        {
+            "name": "Vincent Loy",
+            "email": "vincent.loy1@gmail.com",
+            "url": "http://vincent-loy.fr/"
+        }
+    ],
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "http://opensource.org/licenses/MIT"
+        }
+    ],
+	"demo": "http://vincent-loy.fr/lab/tweetParser/",
+	"bugs": "https://github.com/VincentLoy/jquery.tweetParser/issues",
+    "docs": "https://github.com/VincentLoy/jquery.tweetParser",
+    "download": "https://github.com/VincentLoy/jquery.tweetParser/archive/master.zip",
+    "dependencies": {
+        "jquery": ">=1.1"
+    }
+}
