@@ -33,9 +33,11 @@
             //Hashtag Search link
             var searchlink;
             if(parametres.searchWithHashtags){
+                //this is the search with hashtag
                 searchlink = "https://twitter.com/hashtag/";
             }
             else{
+                //this is a more global search including hashtags and the word itself
                 searchlink = "https://twitter.com/search?q="
             }
             
@@ -50,12 +52,14 @@
                var link = '<a href="'+url+'" class="'+parametres.urlClass+'">'+url+'</a>';           
                return url.replace(url, link);
             
+            //turn @users in the tweet into... working urls
            }).replace(regexUser, function(user){
                
                var userOnly = user.replace('@','');
                var link = '<a href="http://twitter.com/'+userOnly+'" class="'+parametres.userClass+'">'+user+'</a>'
                return user.replace(user, link);
             
+            //turn #hashtags in the tweet into... working urls
            }).replace(regexHashtag, function(hashtag){
                
                var hashtagOnly = hashtag.replace('#', '');
