@@ -45,7 +45,8 @@ bower install jquery.tweet-parser
         urlClass : "tweet_link", //this is default
         userClass : "tweet_user", //this is default
         hashtagClass : "hashtag", //this is default
-        target : "_blank" //this is default
+        target : "_blank", //this is default
+        searchWithHashtags : true //this is default
     });
 ```
 
