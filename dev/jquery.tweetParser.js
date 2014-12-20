@@ -45,22 +45,18 @@
            var regexHashtag = /#(\w+)/g; //regex for #hashtags
             
             //turn URLS in the tweet into... working urls
-           var tweetWithUrls = tweet.replace(regexUrl, function(url){
+        tweet = tweet.replace(regexUrl, function(url){
                
                var link = '<a href="'+url+'" class="'+parametres.urlClass+'">'+url+'</a>';           
                return url.replace(url, link);
-           });
             
-            //create URLS for all @users mentionned /!\ USING tweetWithUrls var !
-           var tweetWithUsers = tweetWithUrls.replace(regexUser, function(user){
+           }).replace(regexUser, function(user){
                
                var userOnly = user.replace('@','');
                var link = '<a href="http://twitter.com/'+userOnly+'" class="'+parametres.userClass+'">'+user+'</a>'
                return user.replace(user, link);
-           });
             
-            //create URLS for all #hashtags /!\ USING tweetWithUsers var !
-           var tweetWithHashtags = tweetWithUsers.replace(regexHashtag, function(hashtag){
+           }).replace(regexHashtag, function(hashtag){
                
                var hashtagOnly = hashtag.replace('#', '');
                var link = '<a href="'+searchlink+hashtagOnly+'" class="'+parametres.hashtagClass+'">'+hashtag+'</a>';         
@@ -68,7 +64,7 @@
            });
             
             //then, it inject the last var into the element containing the tweet
-           $(this).html(tweetWithHashtags);
+           $(this).html(tweet);
 
             //add target attribute to all urls
            $(this).find("a").attr("target", parametres.target);
