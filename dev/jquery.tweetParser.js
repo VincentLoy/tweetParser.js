@@ -14,10 +14,11 @@
         
         var defauts=
         {
-           "urlClass": "tweet_link",
-           "userClass": "tweet_user",
-           "hashtagClass": "hashtag",
-           "target": "_blank"
+            "urlClass": "tweet_link",
+            "userClass": "tweet_user",
+            "hashtagClass": "hashtag",
+            "target": "_blank",
+            "searchWithHashtags": true
 
         };  
 
@@ -28,6 +29,15 @@
         {
             //contain the tweet
            var tweet = $(this).text();
+            
+            //Hashtag Search link
+            var searchlink;
+            if(parametres.searchWithHashtags){
+                searchlink = "https://twitter.com/hashtag/";
+            }
+            else{
+                searchlink = "https://twitter.com/search?q="
+            }
             
             //regex
            var regexUrl = /(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/g; //regex for urls
@@ -53,7 +63,7 @@
            var tweetWithHashtags = tweetWithUsers.replace(regexHashtag, function(hashtag){
                
                var hashtagOnly = hashtag.replace('#', '');
-               var link = '<a href="http://twitter.com/hashtag/'+hashtagOnly+'" class="'+parametres.hashtagClass+'">'+hashtag+'</a>';         
+               var link = '<a href="'+searchlink+hashtagOnly+'" class="'+parametres.hashtagClass+'">'+hashtag+'</a>';         
                return hashtag.replace(hashtag, link);
            });
             
