@@ -11,6 +11,7 @@ tweetParser.js Parse elements containing a tweets and turn URLS, @users &amp; #h
 | userClass | String | tweet_user | css Class used for @user profil url in the tweet |
 | hashtagClass | String | hashtag | css Class used for hashtags url in the tweet |
 | target | HTML attribute for anchor tags | _blank | target used for all <a> generated |
+| searchWithHashtags | Boolean | true | generate hashtag link, if true : "https://twitter.com/hashtag/", if false : "https://twitter.com/search?q=" |
 
 #### INITIALISATION
 
