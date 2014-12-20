@@ -58,16 +58,16 @@ you can customize your tweet with css classes used in parameters
 #### Changelog
  
 + v1.1.0
-⋅⋅* searchWithHashtags parameter added
+  * searchWithHashtags parameter added
 
-⋅⋅⋅ You can now choose where hashtags links will point to.
-⋅⋅⋅ when searchWithHastags = true (default), tweetParser will generate the following link for each hashtags : "twitter.com/hashtag/THE_HASHTAG".⋅
-⋅⋅⋅ if you set it to false, the link will be : "twitter.com/search?q=THE_HASHTAG"
- 
-⋅⋅* code optimisation, remove useless var.
+    You can now choose where hashtags links will point to.
+    when searchWithHastags = true (default), tweetParser will generate the following link for each hashtags : "twitter.com/hashtag/THE_HASHTAG".  
+    if you set it to false, the link will be : "twitter.com/search?q=THE_HASHTAG"
+   
+  * code optimisation, remove useless var.
   
 + v1.0.0
 
-⋅⋅⋅ Initial Version
+   Initial Version
 
 
