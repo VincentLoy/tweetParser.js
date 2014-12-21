@@ -9,7 +9,7 @@ $(document).ready(function(){
         userClass : "tweet_user", //this is default
         hashtagClass : "hashtag", //this is default
         target : "_blank", //this is default
-        searchWithHashtags: true
+        searchWithHashtags: false
     });
     
     
