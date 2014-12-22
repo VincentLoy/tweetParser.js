@@ -51,7 +51,7 @@ bower install jquery.tweet-parser
 ```
 
 #### RESULT EXAMPLE
-###### Check out the [demo](http://vincent-loy.fr/lab/tweetParser/)
+###### Check out the [demo](http://vincent-loy.fr/lab/tweetParser/) or try it in [codepen.io](http://codepen.io/VincentL/pen/PwzXJp)
 you can customize your tweet with css classes used in parameters
 
 ![Result After parsing tweets](https://farm9.staticflickr.com/8670/15852276268_221f9f8b85_o.png)
