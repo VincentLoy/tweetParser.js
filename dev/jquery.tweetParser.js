@@ -28,7 +28,7 @@
         return this.each(function()
         {
             //contain the tweet
-           var tweet = $(this).text();
+           var tweet = $(this).html();
             
             //Hashtag Search link
             var searchlink;
@@ -44,26 +44,24 @@
             //regex
            var regexUrl = /([^\"\'])(https?|ftps?)(\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3})(\/\S*)?/g; //regex for urls
            var regexUser = /\B@([a-zA-Z0-9_-]+)/g; //regex for @users
-           var regexHashtag = /([^\/]\B)(#[a-zA-Z0-9_-]+)/g; //regex for #hashtags
+           var regexHashtag = /(#[a-zA-Z0-9_]+)/g; //regex for #hashtags
             
             //turn URLS in the tweet into... working urls
-        tweet = tweet.replace(regexUrl, function(url){
-               
+            tweet = tweet.replace(regexUrl, function(url){
                var link = '<a href="'+url+'" class="'+parametres.urlClass+'">'+url+'</a>';           
                return url.replace(url, link);
-            
+           });
             //turn @users in the tweet into... working urls
-           }).replace(regexUser, function(user){
-               
-               var userOnly = user.replace('@','');
+            tweet = tweet.replace(regexUser, function(user){
+               var userOnly = user.slice(1);
                var link = '<a href="http://twitter.com/'+userOnly+'" class="'+parametres.userClass+'">'+user+'</a>'
                return user.replace(user, link);
-            
+           });
             //turn #hashtags in the tweet into... working urls
-           }).replace(regexHashtag, function(hashtag){
-               
-               var hashtagOnly = hashtag.replace('#', '');
-               var link = '<a href="'+searchlink+hashtagOnly+'" class="'+parametres.hashtagClass+'">'+hashtag+'</a>';         
+            tweet = tweet.replace(regexHashtag, function(hashtag){
+               var hashtagOnly = hashtag.slice(1);
+                var url = searchlink+hashtagOnly;
+               var link = '<a href="'+url+'" class="'+parametres.hashtagClass+'">'+hashtag+'</a>';
                return hashtag.replace(hashtag, link);
            });
             

@@ -44,7 +44,19 @@
 
 		<script src="dev/vendor/jquery.min.js"></script>
 		<script src="dev/jquery.tweetParser.js"></script>
-		<script src="dev/demo.js"></script>
+		<script>
+			// $(".tweet").tweetParser();
+
+			//you can also custom css classes and target like this
+
+			$(".tweet").tweetParser({
+				urlClass : "tweet_link", //this is default
+				userClass : "tweet_user", //this is default
+				hashtagClass : "hashtag", //this is default
+				target : "_blank", //this is default
+				searchWithHashtags: true
+			});
+		</script>
 	</body>
 
 </html>
