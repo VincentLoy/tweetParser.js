@@ -43,8 +43,8 @@
             
             //regex
            var regexUrl = /([^\"\'])(https?|ftps?)(\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3})(\/\S*)?/g; //regex for urls
-           var regexUser = /\B@([a-zA-Z0-9_-]+)/g; //regex for @users
-           var regexHashtag = /(#[a-zA-Z0-9_]+)/g; //regex for #hashtags
+           var regexUser = /\B@([a-zA-Z0-9_]+)/g; //regex for @users
+           var regexHashtag = /\B(#[a-zA-Z0-9_]+)/g; //regex for #hashtags
             
             //turn URLS in the tweet into... working urls
             tweet = tweet.replace(regexUrl, function(url){
