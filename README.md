@@ -64,6 +64,11 @@ you can customize your tweet with css classes used in parameters
 
 
 #### Changelog
+
++ v1.2.0
+  * add parameter parseUsers, parseHashtags, parseUrls
+  * Makeover on the demo
+  * JSLint passed
  
 + v1.1.0
   * searchWithHashtags parameter added
