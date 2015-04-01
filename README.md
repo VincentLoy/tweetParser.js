@@ -1,12 +1,9 @@
-tweetParser.js
+tweetParser.js - [demo](http://vincent-loy.fr/lab/tweetParser/)
 ==================
 ![Parse Twitter Usernames, Hashtags and URLs Using jQuery](https://farm8.staticflickr.com/7562/15860082069_62c9540ddd_b.jpg)
 tweetParser.js Parse elements containing a tweets and turn URLS, @users &amp; #hashtags into working urls
 
 
-##### [demo](http://vincent-loy.fr/lab/tweetParser/)
-
-==================
 
 #### PARAMETERS
 
