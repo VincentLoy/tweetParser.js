@@ -52,9 +52,9 @@ bower install jquery.tweet-parser
         hashtagClass : "hashtag", //this is default
         target : "_blank", //this is default
         searchWithHashtags : true //this is default
-        "parseUsers" : true,
-        "parseHashtags" : true,
-        "parseUrls" : true
+        parseUsers : true,
+        parseHashtags : true,
+        parseUrls : true
     });
 ```
 
