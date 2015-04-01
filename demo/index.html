@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>tweetParser.js</title>
+
+	<link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://bootswatch.com/paper/bootstrap.min.css"/>
+	<link rel="stylesheet" href="demo.css"/>
+
+	<!-- only for demo -->
+	<link rel="stylesheet" href="prism.css"/>
+
+</head>
+
+<body>
+<header>
+	<div class="wp">
+		<h1>jquery.tweetParser</h1>
+		<h2>V1.2.0</h2>
+	</div>
+</header>
+<main>
+	<div class="container">
+		<article>
+
+
+			<section>
+				<h2>Live Demo</h2>
+				<div class="tweet-container">
+					<div class="row">
+						<div class="col-xs-6 col-xs-offset-3">
+							<p class="tweet">
+								RT @gruntjs: #Sass code quality @Guardian, powered by #gruntjs: http://t.co/urYZOC5fpc #Javascript
+							</p>
+						</div>
+
+						<div class="col-xs-6 col-xs-offset-3">
+							<p class="tweet">
+								Google reCAPTCHA ! http://www.google.com/recaptcha/intro/index.html … #php #web #www #html
+							</p>
+						</div>
+
+						<div class="col-xs-6 col-xs-offset-3">
+							<p class="tweet">
+								TweakStyle is now on a new release cycle - http://blog.tweakstyle.com/2014/11/new-release-cycle/
+							</p>
+						</div>
+
+						<div class="col-xs-6 col-xs-offset-3">
+							<p class="tweet">
+								Great news! Our Gear Store now has gift cards -- a great idea for friends & family who #lovetheweb! https://gear.mozilla.org/products/gift-card
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+
+			<section>
+				<h2>Parameters</h2>
+				<table class="table table-bordered table-striped">
+					<thead>
+					<tr>
+						<th>Parameters</th>
+						<th>Type</th>
+						<th>default</th>
+						<th>description</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td>urlClass</td>
+						<td>String</td>
+						<td>tweet_link</td>
+						<td>css Class used for url in the tweet</td>
+					</tr>
+					<tr>
+						<td>userClass</td>
+						<td>String</td>
+						<td>tweet_user</td>
+						<td>css Class used for @user profil url in the tweet</td>
+					</tr>
+					<tr>
+						<td>hashtagClass</td>
+						<td>String</td>
+						<td>hashtag</td>
+						<td>css Class used for hashtags url in the tweet</td>
+					</tr>
+					<tr>
+						<td>target</td>
+						<td>HTML attribute for anchor tags</td>
+						<td>_blank</td>
+						<td>target used for all <a> generated</a></td>
+					</tr>
+					<tr>
+						<td>searchWithHashtags</td>
+						<td>Boolean</td>
+						<td>true</td>
+						<td>generate hashtag link, if true : "twitter.com/hashtag/", if false : "twitter.com/search?q="</td>
+					</tr>
+					<tr>
+						<td>ParseUsers</td>
+						<td>Boolean</td>
+						<td>true</td>
+						<td>will parse @users if is set to true</td>
+					</tr>
+					<tr>
+						<td>parseUrls</td>
+						<td>Boolean</td>
+						<td>true</td>
+						<td>will parse URLS if is set to true</td>
+					</tr>
+					<tr>
+						<td>parseHashtags</td>
+						<td>Boolean</td>
+						<td>true</td>
+						<td>will parse hashtags if is set to true</td>
+					</tr>
+					</tbody>
+				</table>
+			</section>
+
+			<section>
+				<h2>Getting started</h2>
+				<pre>
+					<code class="language-javascript">
+						//basic usage
+						$("p.tweets").tweetParser();
+
+						//With Default parameters
+						$("p.tweets").tweetParser({
+						urlClass : "tweet_link", //this is default
+						userClass : "tweet_user", //this is default
+						hashtagClass : "hashtag", //this is default
+						target : "_blank", //this is default
+						searchWithHashtags : true //this is default
+						"parseUsers" : true,
+						"parseHashtags" : true,
+						"parseUrls" : true
+						});
+					</code>
+				</pre>
+			</section>
+
+			<section>
+				<h2>Star it ! Fork it ! & Contribute !</h2>
+				<div class="iframe-container">
+					<iframe src="https://ghbtns.com/github-btn.html?user=VincentLoy&repo=jquery.tweetParser&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+					<iframe src="https://ghbtns.com/github-btn.html?user=VincentLoy&repo=jquery.tweetParser&type=fork&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+					<iframe src="https://ghbtns.com/github-btn.html?user=VincentLoy&type=follow&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+				</div>
+			</section>
+		</article>
+	</div>
+</main>
+<footer>
+	<div class="container">
+		<h4 class="text-center">Made with &hearts; by <a href="http://vincent-loy.fr">Vincent Loy</a> </h4>
+	</div>
+</footer>
+
+<script src="../dev/vendor/jquery.min.js"></script>
+<script src="../dev/jquery.tweetParser.js"></script>
+
+<!-- only for demo -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js"></script>
+<script>
+	// $(".tweet").tweetParser();
+
+	//you can also custom css classes and target like this
+
+	$(".tweet").tweetParser({
+		urlClass : "tweet_link", //this is default
+		userClass : "tweet_user", //this is default
+		hashtagClass : "hashtag", //this is default
+		target : "_blank", //this is default
+		searchWithHashtags: true
+	});
+</script>
+</body>
+
+</html>

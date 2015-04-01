@@ -12,6 +12,9 @@ tweetParser.js Parse elements containing a tweets and turn URLS, @users &amp; #h
 | hashtagClass | String | hashtag | css Class used for hashtags url in the tweet |
 | target | HTML attribute for anchor tags | _blank | target used for all <a> generated |
 | searchWithHashtags | Boolean | true | generate hashtag link, if true : "twitter.com/hashtag/", if false : "twitter.com/search?q=" |
+| ParseUsers | Boolean | true | will parse @users if is set to true |
+| parseUrls | Boolean | true | will parse URLS if is set to true |
+| parseHashtags | Boolean | true | will parse hashtags if is set to true |
 
 #### INITIALISATION
 
@@ -40,13 +43,16 @@ bower install jquery.tweet-parser
     //basic usage
     $("p.tweets").tweetParser();
     
-    //With parameters
+    //With Default parameters
     $("p.tweets").tweetParser({
         urlClass : "tweet_link", //this is default
         userClass : "tweet_user", //this is default
         hashtagClass : "hashtag", //this is default
         target : "_blank", //this is default
         searchWithHashtags : true //this is default
+        "parseUsers" : true,
+        "parseHashtags" : true,
+        "parseUrls" : true
     });
 ```
 
