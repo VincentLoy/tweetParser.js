@@ -3,6 +3,11 @@ tweetParser.js
 ![Parse Twitter Usernames, Hashtags and URLs Using jQuery](https://farm8.staticflickr.com/7562/15860082069_62c9540ddd_b.jpg)
 tweetParser.js Parse elements containing a tweets and turn URLS, @users &amp; #hashtags into working urls
 
+
+##### [demo](http://vincent-loy.fr/lab/tweetParser/)
+
+==================
+
 #### PARAMETERS
 
 | Parameters | Type | default | description |
@@ -69,7 +74,7 @@ you can customize your tweet with css classes used in parameters
   * add parameter parseUsers, parseHashtags, parseUrls
   * Makeover on the demo
   * JSLint passed
- 
+
 + v1.1.0
   * searchWithHashtags parameter added
 
