@@ -35,7 +35,7 @@
                 hashtagOnly, //hashtags on tweet
                 url, //url to hashtag search
             //regex
-                regexUrl = /(https?|ftps?)(\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3})(\/\S*)?/g, //regex for urls
+                regexUrl = /(^|\s)((f|ht)tps?:\/\/([^ \t\r\n]*[^ \t\r\n\)*_,\.]))/g, //regex for urls
                 regexUser = /\B@([a-zA-Z0-9_]+)/g, //regex for @users
                 regexHashtag = /\B(#[á-úÁ-Úä-üÄ-Üa-zA-Z0-9_]+)/g; //regex for #hashtags
 
