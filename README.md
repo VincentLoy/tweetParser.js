@@ -67,6 +67,9 @@ you can customize your tweet with css classes used in parameters
 
 #### Changelog
 
++ v1.2.1
+  * Better URL regex
+
 + v1.2.0
   * add parameter parseUsers, parseHashtags, parseUrls
   * Makeover on the demo
