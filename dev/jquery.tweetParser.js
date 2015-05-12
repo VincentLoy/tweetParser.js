@@ -35,7 +35,7 @@
                 hashtagOnly, //hashtags on tweet
                 url, //url to hashtag search
             //regex
-                regexUrl = /(^|\s)((f|ht)tps?:\/\/([^ \t\r\n]*[^ \t\r\n\)*_,\.]))/g, //regex for urls
+                regexUrl = /(^|\s)((f|ht)tps?:\/\/([^ \t\r\n<]*[^ \t\r\n\<)*_,\.]))/g, //regex for urls
                 regexUser = /\B@([a-zA-Z0-9_]+)/g, //regex for @users
                 regexHashtag = /\B(#[á-úÁ-Úä-üÄ-Üa-zA-Z0-9_]+)/g; //regex for #hashtags
 
@@ -50,8 +50,8 @@
 
             //turn URLS in the tweet into... working urls
             if (parametres.parseUrls) {
-                tweet = tweet.replace(regexUrl, function (url) {
-                    link = '<a href="' + url + '" class="' + parametres.urlClass + '">' + url + '</a>';
+                tweet = tweet.replace(regexUrl, function (url,p1,p2) {
+                    link = p1 + '<a href="' + p2 + '" class="' + parametres.urlClass + '">' + p2 + '</a>';
                     return url.replace(url, link);
                 });
             }
