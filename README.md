@@ -66,6 +66,11 @@ you can customize your tweet with css classes used in parameters
 
 
 #### Changelog
++ v1.3.1
+  * Remove Gruntfile to switch to gulpfile
+  * Prepare to publish to npm
+  * Improve the Demo
+  * Add sourcemaps
 
 + v1.3.0
   * Improve (one more time) URL regex :raised_hands:

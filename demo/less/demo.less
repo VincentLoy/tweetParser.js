@@ -1,0 +1,158 @@
+/*
+* Project : jquery.tweetParser
+* File : demo.less
+* Date : June, 06, 2015
+* Author : Vincent Loy <vincent.loy1@gmail.com>
+*/
+@import "../../bower_components/lesshat/build/lesshat";
+@import "variables";
+
+/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block
+}
+
+body {
+  line-height: 1
+}
+
+ol, ul {
+  list-style: none
+}
+
+blockquote, q {
+  quotes: none;
+
+  &:before, &:after {
+    content: none;
+  }
+}
+
+body, html {
+  font-family: @font-general;
+}
+
+h1 {
+  font-size: @font-size-h1;
+}
+
+h2 {
+  font-size: @font-size-h2;
+}
+
+h1, h2 {
+  color: @color-white;
+  font-weight: @font-weight;
+  text-align: center;
+}
+
+main {
+  padding: @spacing 0;
+  background: #ecf0f1;
+}
+
+article {
+  background: #fff;
+  position: relative;
+  border-radius: @border-radius;
+  top: -(@spacing * 3);
+  padding: @spacing (@spacing * 2);
+  box-shadow: @box-shadow;
+
+  h2 {
+    padding: 0 0 @spacing 0;
+    color: @color-blue-1;
+  }
+}
+
+article section {
+  padding-bottom: @spacing;
+}
+
+p {
+  text-align: left;
+  font-size: @font-size;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0
+}
+
+th {
+  font-weight: bold;
+}
+
+
+header, footer {
+  background: @color-blue-1;
+}
+
+header {
+  padding: (@spacing * 2) 0 (@spacing * 3) 0;
+}
+
+footer {
+  padding: (@spacing * 2);
+  h4 {
+    color: @color-white;
+    margin: 0;
+    font-size: @font-size-h4;
+  }
+
+  a {
+    color: @color-links;
+
+    &:hover {
+      color: @color-links;
+      text-decoration: none;
+    }
+  }
+
+}
+
+.iframe-container {
+  display: table;
+  margin: auto;
+
+  iframe {
+    display: inline-block;
+    padding: 0 (@spacing-small / 2);
+    margin: auto;
+  }
+}
+
+.tweet-container .row > div {
+  padding: @spacing-small;
+  margin-bottom: @spacing;
+  border: (@border-size * 2) solid @color-blue-1;
+  border-radius: @border-radius;
+}
+
+.tweet-container h2 {
+  color: @color-blue-1;
+  padding-bottom: @spacing-small;
+}
+
+.tweet_link {
+  color: @color-twitter-link;
+  text-decoration: none;
+}
+
+.tweet_user {
+  color: @color-twitter-user;
+  text-decoration: none;
+}
+
+.hashtag {
+  color: @color-twitter-hashtag;
+}
