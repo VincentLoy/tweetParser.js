@@ -67,8 +67,8 @@ you can customize your tweet with css classes used in parameters
 
 #### Changelog
 
-+ v1.3 (not released yet)
-  * Improve URL regex
++ v1.3
+  * Improve (one more time) URL regex :raised_hands:
 
 + v1.2.1
   * Better URL regex
