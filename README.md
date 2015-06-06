@@ -26,6 +26,11 @@ if you want to use bower just type :
 bower install jquery.tweet-parser
 ```
 
+##### Or via npm
+```
+npm install --save-dev jquery.tweet-parser
+```
+
 ##### Add jquery lib and tweetParser.min.js to your HTML document
 ```html
     <script src="js/jquery.min.js"></script>
