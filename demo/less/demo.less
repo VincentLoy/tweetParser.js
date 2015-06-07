@@ -21,7 +21,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block
 }
 
-body {
+body, html {
+  height: 100%;
   line-height: 1
 }
 
@@ -51,8 +52,82 @@ h2 {
 
 h1, h2 {
   color: @color-white;
-  font-weight: @font-weight;
+  font-family: @font-title;
+  font-weight: @font-weight-bold;
   text-align: center;
+}
+
+header, footer {
+  background: @color-blue-1;
+}
+
+header {
+  .display(flex);
+  .align-items(center);
+  .justify-content(center);
+  height: 75%;
+
+  .wp {
+    max-width: 50%;
+
+    > h2 {
+      font-family: @font-general;
+      font-weight: @font-weight;
+      padding: @spacing;
+    }
+
+    > h3 {
+      color: @color-twitter-link;
+      text-align: center;
+      font-size: @font-size-h3-header;
+      font-family: @font-title;
+      font-weight: @font-weight-bold;
+    }
+  }
+
+  .social-box {
+    display: table;
+    margin: auto;
+    padding: @spacing;
+    .social-link {
+      float: left;
+      margin: 0 @spacing;
+      .transition(0.2s @bezier-1 all);
+      .size(50px);
+      .border-radius(50%);
+      .display(flex);
+      .justify-content(center);
+      text-align: center;
+      .align-items(center);
+      background: @color-white;
+      color: @color-blue-1;
+      font-size: @font-size-h2;
+      text-decoration: none;
+
+      &:hover {
+        .border-radius(2px);
+      }
+    }
+  }
+
+}
+
+footer {
+  padding: (@spacing * 2);
+  h4 {
+    color: @color-white;
+    margin: 0;
+    font-size: @font-size-h4;
+  }
+
+  a {
+    color: @color-links;
+
+    &:hover {
+      color: @color-links;
+      text-decoration: none;
+    }
+  }
 }
 
 main {
@@ -90,34 +165,6 @@ table {
 
 th {
   font-weight: bold;
-}
-
-
-header, footer {
-  background: @color-blue-1;
-}
-
-header {
-  padding: (@spacing * 2) 0 (@spacing * 3) 0;
-}
-
-footer {
-  padding: (@spacing * 2);
-  h4 {
-    color: @color-white;
-    margin: 0;
-    font-size: @font-size-h4;
-  }
-
-  a {
-    color: @color-links;
-
-    &:hover {
-      color: @color-links;
-      text-decoration: none;
-    }
-  }
-
 }
 
 .iframe-container {
