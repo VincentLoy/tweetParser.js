@@ -22,7 +22,7 @@
                 "parseHashtags": true,
                 "parseUrls": true
             },
-            parametres = $.extend(defauts, options);
+            parameters = $.extend(defauts, options);
 
 
         return this.each(function () {
@@ -40,7 +40,7 @@
                 regexHashtag = /\B(#[á-úÁ-Úä-üÄ-Üa-zA-Z0-9_]+)/g; //regex for #hashtags
 
             //Hashtag Search link
-            if (parametres.searchWithHashtags) {
+            if (parameters.searchWithHashtags) {
                 //this is the search with hashtag
                 searchlink = "https://twitter.com/hashtag/";
             } else {
@@ -49,28 +49,28 @@
             }
 
             //turn URLS in the tweet into... working urls
-            if (parametres.parseUrls) {
+            if (parameters.parseUrls) {
                 tweet = tweet.replace(regexUrl, function (url, p1, p2) {
-                    link = p1 + '<a href="' + p2 + '" class="' + parametres.urlClass + '">' + p2 + '</a>';
+                    link = p1 + '<a href="' + p2 + '" class="' + parameters.urlClass + '">' + p2 + '</a>';
                     return url.replace(url, link);
                 });
             }
 
             //turn @users in the tweet into... working urls
-            if (parametres.parseUsers) {
+            if (parameters.parseUsers) {
                 tweet = tweet.replace(regexUser, function (user) {
                     userOnly = user.slice(1);
-                    link = '<a href="http://twitter.com/' + userOnly + '" class="' + parametres.userClass + '">' + user + '</a>';
+                    link = '<a href="http://twitter.com/' + userOnly + '" class="' + parameters.userClass + '">' + user + '</a>';
                     return user.replace(user, link);
                 });
             }
 
             //turn #hashtags in the tweet into... working urls
-            if (parametres.parseHashtags) {
+            if (parameters.parseHashtags) {
                 tweet = tweet.replace(regexHashtag, function (hashtag) {
                     hashtagOnly = hashtag.slice(1);
                     url = searchlink + hashtagOnly;
-                    link = '<a href="' + url + '" class="' + parametres.hashtagClass + '">' + hashtag + '</a>';
+                    link = '<a href="' + url + '" class="' + parameters.hashtagClass + '">' + hashtag + '</a>';
                     return hashtag.replace(hashtag, link);
                 });
             }
@@ -79,8 +79,7 @@
             $(this).html(tweet);
 
             //add target attribute to all urls
-            $(this).find("a").attr("target", parametres.target);
-
+            $(this).find("a").attr("target", parameters.target);
 
         });
     };
