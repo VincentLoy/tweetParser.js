@@ -18,9 +18,9 @@
                 "hashtagClass": "hashtag",
                 "target": "_blank",
                 "searchWithHashtags": true,
-                "parseUsers" : true,
-                "parseHashtags" : true,
-                "parseUrls" : true
+                "parseUsers": true,
+                "parseHashtags": true,
+                "parseUrls": true
             },
             parametres = $.extend(defauts, options);
 
@@ -50,7 +50,7 @@
 
             //turn URLS in the tweet into... working urls
             if (parametres.parseUrls) {
-                tweet = tweet.replace(regexUrl, function (url,p1,p2) {
+                tweet = tweet.replace(regexUrl, function (url, p1, p2) {
                     link = p1 + '<a href="' + p2 + '" class="' + parametres.urlClass + '">' + p2 + '</a>';
                     return url.replace(url, link);
                 });
