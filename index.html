@@ -161,6 +161,22 @@
 				</pre>
 			</section>
 
+            <section id="contributors">
+                <h2>Contributors</h2>
+                {{#contributor}}
+                <div class="contributor">
+                    <h3>{{login}}</h3>
+                    <a href="{{html_url}}">
+                        <img data-src="{{avatar_url}}" alt="{{login}}" class="contributor-image"/>
+                    </a>
+
+                    <p class="contrib_count">
+                        {{contributions}} {{wording}}
+                    </p>
+                </div>
+                {{/contributor}}
+            </section>
+
 			<section>
 				<h2>Star it ! Fork it ! & Contribute !</h2>
 				<div class="iframe-container">
@@ -179,6 +195,8 @@
 </footer>
 
 <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.1.0/mustache.min.js"></script>
+<script src="demo/mustacheRender.js"></script>
 <script src="dist/jquery.tweetParser.min.js"></script>
 
 <!-- only for demo -->

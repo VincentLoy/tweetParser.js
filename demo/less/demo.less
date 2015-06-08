@@ -6,6 +6,7 @@
 */
 @import "../../bower_components/lesshat/build/lesshat";
 @import "variables";
+@import "mixins";
 
 /* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
@@ -141,7 +142,7 @@ article {
   border-radius: @border-radius;
   top: -(@spacing * 3);
   padding: @spacing (@spacing * 2);
-  box-shadow: @box-shadow;
+  .BoxShadowHelper(2);
 
   h2 {
     padding: 0 0 @spacing 0;
@@ -165,6 +166,43 @@ table {
 
 th {
   font-weight: bold;
+}
+
+#contributors {
+  overflow: hidden;
+  display: table;
+  margin: auto;
+
+  .contributor {
+    float:left;
+    padding: @spacing;
+    text-align: center;
+
+    h3 {
+      font-size: @font-size-h3;
+      text-align: center;
+      color: @color-blue-1;
+      font-weight: @font-weight;
+    }
+
+    .contributor-image {
+      .size(@contrib-img-size);
+      margin: @spacing;
+      .BoxShadowHelper(1);
+      .transition(0.2s ease-in-out all);
+
+      &:hover {
+        .BoxShadowHelper(3);
+        .scale3d(1.02, 1.02, 1.02);
+      }
+    }
+
+    .contrib_count {
+      text-align: center;
+      font-weight: @font-weight-bold;
+      color: @color-blue-1;
+    }
+  }
 }
 
 .iframe-container {
