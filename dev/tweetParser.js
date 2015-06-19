@@ -1,8 +1,8 @@
 /*!
  * jquery Tweet Parser v1.3.1
  * Parse an element containing a tweet and turn URLS, @user & #hashtags into urls
- * MIT License
- * by Vincent Loy
+ * License : MIT
+ * author Vincent Loy <vincent.loy1@gmail.com>
  * http://vincent-loy.fr
  */
 

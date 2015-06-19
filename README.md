@@ -1,4 +1,4 @@
-tweetParser.js - [demo](http://vincentloy.github.io/jquery.tweetParser/)
+tweetParser.js - [demo](http://vincentloy.github.io/tweetParser.js/)
 ==================
 ![Parse Twitter Usernames, Hashtags and URLs Using jQuery](https://farm8.staticflickr.com/7562/15860082069_62c9540ddd_b.jpg)
 tweetParser.js Parse elements containing a tweets and turn URLS, @users &amp; #hashtags into working urls
@@ -34,7 +34,7 @@ npm install --save-dev jquery.tweet-parser
 ##### Add jquery lib and tweetParser.min.js to your HTML document
 ```html
     <script src="js/jquery.min.js"></script>
-    <script src="js/jquery.tweetParser.min.js"></script>
+    <script src="js/tweetParser.min.js"></script>
 ```
 
 
@@ -64,7 +64,7 @@ npm install --save-dev jquery.tweet-parser
 ```
 
 #### RESULT EXAMPLE
-###### Check out the [demo](http://vincentloy.github.io/jquery.tweetParser/) or try it in [codepen.io](http://codepen.io/VincentL/pen/PwzXJp)
+###### Check out the [demo](http://vincentloy.github.io/tweetParser.js/) or try it in [codepen.io](http://codepen.io/VincentL/pen/PwzXJp)
 you can customize your tweet with css classes used in parameters
 
 ![Result After parsing tweets](https://farm9.staticflickr.com/8670/15852276268_221f9f8b85_o.png)
@@ -100,5 +100,3 @@ you can customize your tweet with css classes used in parameters
 + v1.0.0
 
    Initial Version
-
-

@@ -1,5 +1,5 @@
 /**
- * Project : jquery.tweetParser
+ * Project : tweetParser.js
  * File : mustacheRender
  * Date : June, 08 2015
  * Author : Vincent Loy <vincent.loy1@gmail.com>
@@ -16,7 +16,9 @@
     Mustache.parse(contributorTemplate);
 
     $.getJSON(apiUrl, function (datas) {
-        for (var i in datas) {
+        var i;
+
+        for (i = 0; i < datas.length; i += 1) {
             if (datas[i].contributions > 1) {
                 datas[i].wording = "contributions";
             } else {
@@ -29,8 +31,8 @@
         ));
 
         // Cheat to not get 404 not found for src="{{html_url}}" :O
-        $('.contributor-image').each(function  () {
-           $(this).attr('src', $(this).attr('data-src'));
+        $('.contributor-image').each(function () {
+            $(this).attr('src', $(this).attr('data-src'));
         });
     });
 

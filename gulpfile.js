@@ -1,7 +1,7 @@
 /**
- * Project : jquery.tweetParser
+ * Project : tweetParser.js
  * File : gulpfile
- * Date : 06 juin 2015
+ * Date : 06/20/2015
  * Author : Vincent Loy <vincent.loy1@gmail.com>
  */
 
