@@ -74,7 +74,7 @@ you can customize your tweet with css classes used in parameters
 #### Changelog
 + v2.0.0
   * REMOVE jQuery dependeces...
-  * ...But it still easy to use like a jQuery Plugin.
+  * ...But it still easy to use it as simple as a jQuery Plugin.
   * Improve URL regex : white spaces are not eaten anymore
 
 NB : For you, there is just some small changes in the syntax to call tweetParser.
