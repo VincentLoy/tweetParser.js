@@ -85,7 +85,7 @@ tweetParser([SELECTOR], [PARAMETERS])
 ``` 
 instead of : 
 ```javascript
-$([SELECTORE]).tweetParser([PARAMETERS]);
+$([SELECTOR]).tweetParser([PARAMETERS]);
 ``` 
 
 + v1.3.1
