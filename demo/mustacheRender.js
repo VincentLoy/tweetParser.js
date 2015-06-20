@@ -11,7 +11,7 @@
 
     var contributorsBox = $('#contributors'),
         contributorTemplate = contributorsBox.html(),
-        apiUrl = 'https://api.github.com/repos/VincentLoy/jquery.tweetParser/contributors';
+        apiUrl = 'https://api.github.com/repos/VincentLoy/tweetParser.js/contributors';
 
     Mustache.parse(contributorTemplate);
 

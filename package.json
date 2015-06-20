@@ -1,7 +1,7 @@
 {
-  "name": "jquery.tweet-parser",
-  "description": "jQuery plugin that Parse an element containing a tweet and turn URLS, @user & #hashtags into working urls",
-  "version": "1.3.1",
+  "name": "tweetparser.js",
+  "description": "Small javascript library that parse an element containing a tweet and turn URLS, @user & #hashtags into working urls",
+  "version": "2.0.0",
   "homepage": "http://vincentloy.github.io/tweetParser.js",
   "author": {
     "name": "Vincent Loy",
