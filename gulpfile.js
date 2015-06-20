@@ -38,7 +38,7 @@
     });
 
     gulp.task('compress', function () {
-        return gulp.src(devJSDir + '/*.js')
+        return gulp.src(devJSDir + '/tweetParser.js')
             .pipe(sourcemaps.init())
             .pipe(uglify({
                 preserveComments: 'some'

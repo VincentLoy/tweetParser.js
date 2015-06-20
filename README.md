@@ -1,6 +1,6 @@
 tweetParser.js - [demo](http://vincentloy.github.io/tweetParser.js/)
 ==================
-![Parse Twitter Usernames, Hashtags and URLs Using jQuery](https://farm8.staticflickr.com/7562/15860082069_62c9540ddd_b.jpg)
+![Parse Twitter Usernames, Hashtags and URLs](https://farm1.staticflickr.com/420/18350171613_b3f9c26641_b.jpg)
 tweetParser.js Parse elements containing a tweets and turn URLS, @users &amp; #hashtags into working urls
 
 
@@ -23,24 +23,23 @@ tweetParser.js Parse elements containing a tweets and turn URLS, @users &amp; #h
 ##### You can install tweetParser.js with Bower
 if you want to use bower just type :
 ```
-bower install jquery.tweet-parser
+bower install tweetparser.js
 ```
 
 ##### Or via npm
 ```
-npm install --save-dev jquery.tweet-parser
+npm install --save-dev tweetparser.js
 ```
 
-##### Add jquery lib and tweetParser.min.js to your HTML document
+##### Add tweetParser.min.js to your HTML document
 ```html
-    <script src="js/jquery.min.js"></script>
     <script src="js/tweetParser.min.js"></script>
 ```
 
 
 ##### Your tweet in your html document
 ```html
-    <p class="tweets">This is my awesome text only tweet ! #web #twitter @twitter http://www.twitter.com/ !!</p>
+    <p class="tweet">This is my awesome text only tweet ! #web #twitter @twitter http://www.twitter.com/ !!</p>
  ```
  
  
@@ -48,10 +47,10 @@ npm install --save-dev jquery.tweet-parser
 
 ```javascript   
     //basic usage
-    $("p.tweets").tweetParser();
+    tweetParser('.tweet');
     
     //With Default parameters
-    $("p.tweets").tweetParser({
+    tweetParser('.tweet', {
         urlClass : "tweet_link", //this is default
         userClass : "tweet_user", //this is default
         hashtagClass : "hashtag", //this is default
@@ -61,16 +60,34 @@ npm install --save-dev jquery.tweet-parser
         parseHashtags : true,
         parseUrls : true
     });
+    
+    // Note that '.tweet' is your own CSS selector
 ```
 
 #### RESULT EXAMPLE
-###### Check out the [demo](http://vincentloy.github.io/tweetParser.js/) or try it in [codepen.io](http://codepen.io/VincentL/pen/PwzXJp)
+###### Check out the [demo](http://vincentloy.github.io/tweetParser.js/)
 you can customize your tweet with css classes used in parameters
 
 ![Result After parsing tweets](https://farm9.staticflickr.com/8670/15852276268_221f9f8b85_o.png)
 
 
 #### Changelog
++ v2.0.0
+  * REMOVE jQuery dependecies...
+  * ...But it still easy to use it as simple as a jQuery Plugin.
+  * Improve URL regex : white spaces are not eaten anymore
+
+NB : For you, there is just some small changes in the syntax to call tweetParser.
+
+use 
+```javascript
+tweetParser([SELECTOR], [PARAMETERS])
+``` 
+instead of : 
+```javascript
+$([SELECTOR]).tweetParser([PARAMETERS]);
+``` 
+
 + v1.3.1
   * Remove Gruntfile to switch to gulpfile
   * Prepare to publish to npm
