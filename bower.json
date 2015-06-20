@@ -10,9 +10,6 @@
     "dist/tweetParser.min.js",
     "dev/tweetParser.js"
   ],
-  "moduleType": [
-    "globals"
-  ],
   "keywords": [
     "jquery",
     "plugin",
@@ -27,9 +24,6 @@
   ],
   "license": "MIT",
   "ignore": [
-    "**/.*",
-    "dev/demo.js",
-    "dev/vendor",
     "node_modules",
     "bower_components",
     "*.md"
