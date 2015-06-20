@@ -5,7 +5,7 @@
   "authors": [
     "VincentLoy <vincent.loy1@gmail.com>"
   ],
-  "description": "Small Javascript Library that parse Twitter Usernames, Hashtags and URLs Using jQuery",
+  "description": "Small Javascript Library that parse Twitter Usernames, Hashtags and URLs",
   "main": [
     "dist/tweetParser.min.js",
     "dev/tweetParser.js"
