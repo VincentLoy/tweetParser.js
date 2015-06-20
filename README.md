@@ -73,7 +73,7 @@ you can customize your tweet with css classes used in parameters
 
 #### Changelog
 + v2.0.0
-  * REMOVE jQuery dependeces...
+  * REMOVE jQuery dependecies...
   * ...But it still easy to use it as simple as a jQuery Plugin.
   * Improve URL regex : white spaces are not eaten anymore
 
