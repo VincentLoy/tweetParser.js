@@ -10,21 +10,10 @@
     'use strict';
 
     function tweetParserify(el, options) {
-        var $el = $(el),
-            selector,
-            elId = $el.attr('id'),
-            elClass = $el.attr('class');
-
-        if (elClass !== undefined) {
-            selector = '.' + elClass;
-        } else if (elId !== undefined) {
-            selector = '#' + elId;
-        }
-
-        tweetParser(selector, options);
+        tweetParser(el, options);
     }
 
     $.fn.tweetParser = function (options) {
-        return tweetParserify(this.first(), options);
+        return tweetParserify(this.selector, options);
     };
 }(jQuery, tweetParser));
