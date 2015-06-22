@@ -1,5 +1,5 @@
 /*!
- * tweetParser.js v2.0.1
+ * tweetParser.js v2.0.0
  * Small Javascript Library that parse an element containing a tweet and turn URLS, @user & #hashtags into urls
  * License : MIT
  * author Vincent Loy <vincent.loy1@gmail.com>
@@ -16,7 +16,8 @@
     var tweetParser,
 
     // functions
-        extend;
+        extend,
+        generateLink;
 
     extend = function (out) {
         var i,
@@ -36,6 +37,15 @@
         return out;
     };
 
+    generateLink = function (url, className, text) {
+        var link = document.createElement('a');
+        link.href = url;
+        link.classList.add(className);
+        link.textContent = text;
+
+        return link;
+    };
+
     tweetParser = function (element, args) {
         var elt = document.querySelectorAll(element),
             parameters = extend({
@@ -53,8 +63,6 @@
 
             var tweet = el.innerHTML,
                 searchlink, //search link for hashtags
-                link, //html <a> tag
-                url, //url to hashtags search
 
 
             //regex
@@ -74,10 +82,7 @@
             //turn URLS in the tweet into... working urls
             if (parameters.parseUrls) {
                 tweet = tweet.replace(regexUrl, function (url) {
-                    link = document.createElement('a');
-                    link.href = url;
-                    link.classList.add(parameters.urlClass);
-                    link.textContent = url;
+                    var link = generateLink(url, parameters.urlClass, url);
 
                     return url.replace(url, link.outerHTML);
                 });
@@ -86,12 +91,9 @@
             //turn @users in the tweet into... working urls
             if (parameters.parseUsers) {
                 tweet = tweet.replace(regexUser, function (user) {
-                    var userOnly = user.slice(1);
-
-                    link = document.createElement('a');
-                    link.href = 'http://twitter.com/' + userOnly;
-                    link.classList.add(parameters.userClass);
-                    link.textContent = user;
+                    var userOnly = user.slice(1),
+                        url = 'http://twitter.com/' + userOnly,
+                        link = generateLink(url, parameters.userClass, user);
 
                     return user.replace(user, link.outerHTML);
                 });
@@ -100,13 +102,9 @@
             //turn #hashtags in the tweet into... working urls
             if (parameters.parseHashtags) {
                 tweet = tweet.replace(regexHashtag, function (hashtag) {
-                    var hashtagOnly = hashtag.slice(1);
-
-                    url = searchlink + hashtagOnly;
-                    link = document.createElement('a');
-                    link.href = url;
-                    link.classList.add(parameters.hashtagClass);
-                    link.textContent = hashtag;
+                    var hashtagOnly = hashtag.slice(1),
+                        url = searchlink + hashtagOnly,
+                        link = generateLink(url, parameters.hashtagClass, hashtag);
 
                     return hashtag.replace(hashtag, link.outerHTML);
                 });
