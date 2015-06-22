@@ -1,9 +1,11 @@
-/**
- * Project : tweetParser.js
- * File : jquery.tweetParser.js
- * Date : June, 22, 2015
- * Author : Vincent Loy <vincent.loy1@gmail.com>
+/*!
+ * tweetParser.js jQuery compatibility file
+ * Small Javascript Library that parse an element containing a tweet and turn URLS, @user & #hashtags into urls
+ * License : MIT
+ * author Vincent Loy <vincent.loy1@gmail.com>
+ * http://vincent-loy.fr
  */
+
 /*global define, exports, require, $, tweetParser, jQuery*/
 
 (function ($, tweetParser) {

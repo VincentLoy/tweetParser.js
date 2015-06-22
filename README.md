@@ -64,6 +64,17 @@ npm install --save-dev tweetparser.js
     // Note that '.tweet' is your own CSS selector
 ```
 
+###### Want to use it in the jQuery way ?
+```html
+  <!-- To use it with jQuery : add tweetParser.js and jquery.tweetParser.js -->
+  <script src="dist/tweetParser.js"></script>
+  <script src="dev/jquery.tweetParser.js"></script>
+  ```
+  and call tweetParser like in v1 :
+  ```javascript
+  $([SELECTOR]).tweetParser([PARAMETERS]);
+  ```
+
 #### RESULT EXAMPLE
 ###### Check out the [demo](http://vincentloy.github.io/tweetParser.js/)
 you can customize your tweet with css classes used in parameters
@@ -72,6 +83,22 @@ you can customize your tweet with css classes used in parameters
 
 
 #### Changelog
++ v2.1.0
+  * Add a jQuery compatibility file.
+  * You can now use Both VanillaJS or jQuery.
+  ```html
+  <!-- To use it with jQuery : add tweetParser.js and jquery.tweetParser.js -->
+  <script src="dist/tweetParser.js"></script>
+  <script src="dev/jquery.tweetParser.js"></script>
+  ```
+  and call tweetParser like in v1 :
+  ```javascript
+  $([SELECTOR]).tweetParser([PARAMETERS]);
+  ```
+  It is always easier to use it without jQuery just don't add jquery.tweetParser.js and :
+  ```javascript
+  tweetParser([SELECTOR], [PARAMETERS]);
+  ```
 + v2.0.2
   * Code refactoring
 
@@ -87,7 +114,7 @@ NB : For you, there is just some small changes in the syntax to call tweetParser
 
 use 
 ```javascript
-tweetParser([SELECTOR], [PARAMETERS])
+tweetParser([SELECTOR], [PARAMETERS]);
 ``` 
 instead of : 
 ```javascript
