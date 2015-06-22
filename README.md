@@ -72,6 +72,9 @@ you can customize your tweet with css classes used in parameters
 
 
 #### Changelog
++ v2.0.2
+  * Code refactoring
+
 + v2.0.1
   * Fix issue #8 - is now Firefox compatible - replace innerText by textContent
 
