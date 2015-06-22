@@ -1,5 +1,5 @@
 /*!
- * tweetParser.js v2.0.0
+ * tweetParser.js v2.0.1
  * Small Javascript Library that parse an element containing a tweet and turn URLS, @user & #hashtags into urls
  * License : MIT
  * author Vincent Loy <vincent.loy1@gmail.com>
@@ -77,7 +77,7 @@
                     link = document.createElement('a');
                     link.href = url;
                     link.classList.add(parameters.urlClass);
-                    link.innerText = url;
+                    link.textContent = url;
 
                     return url.replace(url, link.outerHTML);
                 });
@@ -91,7 +91,7 @@
                     link = document.createElement('a');
                     link.href = 'http://twitter.com/' + userOnly;
                     link.classList.add(parameters.userClass);
-                    link.innerText = user;
+                    link.textContent = user;
 
                     return user.replace(user, link.outerHTML);
                 });
@@ -106,7 +106,7 @@
                     link = document.createElement('a');
                     link.href = url;
                     link.classList.add(parameters.hashtagClass);
-                    link.innerText = hashtag;
+                    link.textContent = hashtag;
 
                     return hashtag.replace(hashtag, link.outerHTML);
                 });
