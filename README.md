@@ -3,7 +3,7 @@ tweetParser.js - [demo](http://vincentloy.github.io/tweetParser.js/)
 ![Parse Twitter Usernames, Hashtags and URLs](https://farm1.staticflickr.com/420/18350171613_b3f9c26641_b.jpg)
 tweetParser.js Parse elements containing a tweets and turn URLS, @users &amp; #hashtags into working urls
 
-
+tweetParser is also available as a [Django Template Filter](https://github.com/VincentLoy/tweetparser-django-template-filter)
 
 #### PARAMETERS
 
