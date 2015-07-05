@@ -82,6 +82,17 @@ you can customize your tweet with css classes used in parameters
 ![Result After parsing tweets](https://farm9.staticflickr.com/8670/15852276268_221f9f8b85_o.png)
 
 
+### Contributing
+- Give it a [star](https://github.com/VincentLoy/tweetParser.js/stargazers) !
+- [Report a bug](https://github.com/VincentLoy/tweetParser.js/issues)
+- Tweet about it :)
+
+#### Pull Requests
+- **Solve a problem**
+- For code enhancement, use [JSLint](http://www.jslint.com/help.html) as a code quality tool.
+- Small is better than Big.
+
+
 #### Changelog
 + v2.1.0
   * Add a jQuery compatibility file.
