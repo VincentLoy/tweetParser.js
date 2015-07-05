@@ -66,9 +66,8 @@ npm install --save-dev tweetparser.js
 
 ###### Want to use it in the jQuery way ?
 ```html
-  <!-- To use it with jQuery : add tweetParser.js and jquery.tweetParser.js -->
-  <script src="dist/tweetParser.js"></script>
-  <script src="dev/jquery.tweetParser.js"></script>
+  <script src="path/to/jquery.min.js"></script>
+  <script src="path/to/tweetParser.js"></script>
   ```
   and call tweetParser like in v1 :
   ```javascript
