@@ -1,5 +1,5 @@
 /*!
- * tweetParser.js v2.1.1
+ * tweetParser.js v2.1.2
  * Small Javascript Library that parse an element containing a tweet and turn URLS, @user & #hashtags into working urls
  * License : MIT
  * author Vincent Loy <vincent.loy1@gmail.com>
@@ -66,7 +66,7 @@
 
 
             //regex
-                regexUrl = /(f|ht)tps?:\/\/([^\s\t\r\n<]*[^\s\t\r\n<)*_,\.])/g, //regex for urls
+                regexUrl = /(?:\s)(f|ht)tps?:\/\/([^\s\t\r\n<]*[^\s\t\r\n<)*_,\.])/g, //regex for urls
                 regexUser = /\B@([a-zA-Z0-9_]+)/g, //regex for @users
                 regexHashtag = /\B(#[á-úÁ-Úä-üÄ-Üa-zA-Z0-9_]+)/g; //regex for #hashtags
 

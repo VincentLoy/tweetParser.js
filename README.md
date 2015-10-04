@@ -94,6 +94,9 @@ you can customize your tweet with css classes used in parameters
 
 #### Changelog
 
++ v2.1.2
+  * Emojis support
+
 + v2.1.1
   * resolve [issue #9](https://github.com/VincentLoy/tweetParser.js/issues/9) - Wrap tweetParser and the jQuery compatibility file in the same file.
 
