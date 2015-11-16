@@ -94,6 +94,9 @@ you can customize your tweet with css classes used in parameters
 
 #### Changelog
 
++ v2.1.3
+  * Fix #10 - target link parameter issue
+
 + v2.1.2
   * Emojis support
 

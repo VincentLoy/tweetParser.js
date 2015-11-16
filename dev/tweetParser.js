@@ -1,5 +1,5 @@
 /*!
- * tweetParser.js v2.1.2
+ * tweetParser.js v2.1.3
  * Small Javascript Library that parse an element containing a tweet and turn URLS, @user & #hashtags into working urls
  * License : MIT
  * author Vincent Loy <vincent.loy1@gmail.com>
