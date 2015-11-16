@@ -37,10 +37,11 @@
         return out;
     };
 
-    generateLink = function (url, className, text) {
+    generateLink = function (url, className, target, text) {
         var link = document.createElement('a');
         link.href = url;
         link.classList.add(className);
+        link.target = target;
         link.textContent = text;
 
         return link;
@@ -82,7 +83,7 @@
             //turn URLS in the tweet into... working urls
             if (parameters.parseUrls) {
                 tweet = tweet.replace(regexUrl, function (url) {
-                    var link = generateLink(url, parameters.urlClass, url);
+                    var link = generateLink(url, parameters.urlClass, parameters.target, url);
 
                     return url.replace(url, link.outerHTML);
                 });
@@ -93,7 +94,7 @@
                 tweet = tweet.replace(regexUser, function (user) {
                     var userOnly = user.slice(1),
                         url = 'http://twitter.com/' + userOnly,
-                        link = generateLink(url, parameters.userClass, user);
+                        link = generateLink(url, parameters.userClass, parameters.target, user);
 
                     return user.replace(user, link.outerHTML);
                 });
@@ -104,7 +105,7 @@
                 tweet = tweet.replace(regexHashtag, function (hashtag) {
                     var hashtagOnly = hashtag.slice(1),
                         url = searchlink + hashtagOnly,
-                        link = generateLink(url, parameters.hashtagClass, hashtag);
+                        link = generateLink(url, parameters.hashtagClass, parameters.target, hashtag);
 
                     return hashtag.replace(hashtag, link.outerHTML);
                 });
