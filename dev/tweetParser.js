@@ -1,5 +1,5 @@
 /*!
- * tweetParser.js v2.1.3
+ * tweetParser.js v2.2.0
  * Small Javascript Library that parse an element containing a tweet and turn URLS, @user & #hashtags into working urls
  * License : MIT
  * author Vincent Loy <vincent.loy1@gmail.com>
@@ -13,21 +13,18 @@
     'use strict';
 
     // Class
-    var tweetParser,
+    let tweetParser,
 
     // functions
         extend,
         generateLink;
 
     extend = function (out) {
-        var i,
-            key;
-
         out = out || {};
 
-        for (i = 1; i < arguments.length; i += 1) {
+        for (let i = 1; i < arguments.length; i += 1) {
             if (arguments[i]) {
-                for (key in arguments[i]) {
+                for (let key in arguments[i]) {
                     if (arguments[i].hasOwnProperty(key)) {
                         out[key] = arguments[i][key];
                     }
@@ -38,7 +35,7 @@
     };
 
     generateLink = function (url, className, target, text) {
-        var link = document.createElement('a');
+        let link = document.createElement('a');
         link.href = url;
         link.classList.add(className);
         link.target = target;
@@ -48,7 +45,7 @@
     };
 
     tweetParser = function (element, args) {
-        var elt = document.querySelectorAll(element),
+        let elt = document.querySelectorAll(element),
             parameters = extend({
                 urlClass: 'tweet_link',
                 userClass: 'tweet_user',
@@ -60,16 +57,14 @@
                 parseUrls: true
             }, args);
 
-        Array.prototype.forEach.call(elt, function (el) {
+        Array.prototype.forEach.call(elt, el => {
 
-            var tweet = el.innerHTML,
-                searchlink, //search link for hashtags
+            const REGEX_URL = /(?:\s)(f|ht)tps?:\/\/([^\s\t\r\n<]*[^\s\t\r\n<)*_,\.])/g, //regex for urls
+                REGEX_USER = /\B@([a-zA-Z0-9_]+)/g, //regex for @users
+                REGEX_HASHTAG = /\B(#[á-úÁ-Úä-üÄ-Üa-zA-Z0-9_]+)/g; //regex for #hashtags
 
-
-            //regex
-                regexUrl = /(?:\s)(f|ht)tps?:\/\/([^\s\t\r\n<]*[^\s\t\r\n<)*_,\.])/g, //regex for urls
-                regexUser = /\B@([a-zA-Z0-9_]+)/g, //regex for @users
-                regexHashtag = /\B(#[á-úÁ-Úä-üÄ-Üa-zA-Z0-9_]+)/g; //regex for #hashtags
+            let tweet = el.innerHTML,
+                searchlink; //search link for hashtags
 
             //Hashtag Search link
             if (parameters.searchWithHashtags) {
@@ -82,8 +77,8 @@
 
             //turn URLS in the tweet into... working urls
             if (parameters.parseUrls) {
-                tweet = tweet.replace(regexUrl, function (url) {
-                    var link = generateLink(url, parameters.urlClass, parameters.target, url);
+                tweet = tweet.replace(REGEX_URL, function (url) {
+                    let link = generateLink(url, parameters.urlClass, parameters.target, url);
 
                     return url.replace(url, link.outerHTML);
                 });
@@ -91,9 +86,9 @@
 
             //turn @users in the tweet into... working urls
             if (parameters.parseUsers) {
-                tweet = tweet.replace(regexUser, function (user) {
-                    var userOnly = user.slice(1),
-                        url = 'http://twitter.com/' + userOnly,
+                tweet = tweet.replace(REGEX_USER, function (user) {
+                    let userOnly = user.slice(1),
+                        url = `http://twitter.com/${userOnly}`,
                         link = generateLink(url, parameters.userClass, parameters.target, user);
 
                     return user.replace(user, link.outerHTML);
@@ -102,8 +97,8 @@
 
             //turn #hashtags in the tweet into... working urls
             if (parameters.parseHashtags) {
-                tweet = tweet.replace(regexHashtag, function (hashtag) {
-                    var hashtagOnly = hashtag.slice(1),
+                tweet = tweet.replace(REGEX_HASHTAG, function (hashtag) {
+                    let hashtagOnly = hashtag.slice(1),
                         url = searchlink + hashtagOnly,
                         link = generateLink(url, parameters.hashtagClass, parameters.target, hashtag);
 

@@ -94,6 +94,10 @@ you can customize your tweet with css classes used in parameters
 
 #### Changelog
 
++ v2.2.0
+  * Add Babel in dev dependecies
+  * Port dev code to es6 syntax
+
 + v2.1.3
   * Fix #10 - target link parameter issue
 
