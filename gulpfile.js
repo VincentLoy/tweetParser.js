@@ -44,9 +44,9 @@
             .pipe(babel({
                 presets: ['babel-preset-es2015']
             }))
-            //.pipe(uglify({
-            //    preserveComments: 'some'
-            //}))
+            .pipe(uglify({
+                preserveComments: 'some'
+            }))
             .pipe(rename({
                 extname: '.min.js'
             }))
@@ -57,6 +57,7 @@
     // Keep an eye on Less
     gulp.task('watch', function () {
         gulp.watch('demo/**/*.less', ['css']);
+        gulp.watch('./dev/tweetParser.js', ['build:es6']);
     });
 
     // What tasks does running gulp trigger?
