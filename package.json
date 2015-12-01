@@ -1,7 +1,7 @@
 {
   "name": "tweetparser.js",
   "description": "Small javascript library that parse an element containing a tweet and turn URLS, @user & #hashtags into working urls",
-  "version": "2.1.3",
+  "version": "2.2.0",
   "homepage": "http://vincentloy.github.io/tweetParser.js",
   "author": {
     "name": "Vincent Loy",
@@ -46,6 +46,9 @@
     "gulp": "^3.8.11",
     "gulp-less": "^3.0.3",
     "gulp-minify-css": "^1.1.1",
+    "babel-polyfill": "^6.0.16",
+    "babel-preset-es2015": "^6.0.15",
+    "gulp-babel": "^6.0.0",
     "gulp-plumber": "^1.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^1.5.2",

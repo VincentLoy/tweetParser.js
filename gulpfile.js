@@ -18,6 +18,7 @@
         plumber = require('gulp-plumber'),
         uglify = require('gulp-uglify'),
         rename = require('gulp-rename'),
+        babel = require('gulp-babel'),
         targetCSSDir = 'demo',
         targetLESSDir = targetCSSDir + '/less',
         devJSDir = 'dev',
@@ -37,16 +38,19 @@
             .pipe(gulp.dest(targetCSSDir));
     });
 
-    gulp.task('compress', function () {
+    gulp.task('build:es6', function () {
         return gulp.src(devJSDir + '/tweetParser.js')
             .pipe(sourcemaps.init())
-            .pipe(uglify({
-                preserveComments: 'some'
+            .pipe(babel({
+                presets: ['babel-preset-es2015']
             }))
+            //.pipe(uglify({
+            //    preserveComments: 'some'
+            //}))
             .pipe(rename({
                 extname: '.min.js'
             }))
-            .pipe(sourcemaps.write())
+            .pipe(sourcemaps.write('./'))
             .pipe(gulp.dest(distJSDir));
     });
 
@@ -58,6 +62,6 @@
     // What tasks does running gulp trigger?
     gulp.task('default', ['css', 'watch']);
 
-    //To uglify the new version of tweetparser run : gulp release or gulp compress
-    gulp.task('release', ['compress']);
+    //To uglify the new version of tweetparser run : gulp release or gulp build:es6
+    gulp.task('release', ['build:es6']);
 }());
