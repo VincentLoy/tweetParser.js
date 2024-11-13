@@ -4,7 +4,7 @@
 * Date : June, 06, 2015
 * Author : Vincent Loy <vincent.loy1@gmail.com>
 */
-@import "../../bower_components/lesshat/build/lesshat";
+@import "../../node_modules/lesshat/lesshat";
 @import "variables";
 @import "mixins";
 
@@ -148,6 +148,27 @@ article {
     padding: 0 0 @spacing 0;
     color: @color-blue-1;
   }
+
+  h3 {
+    padding: 0 0 @spacing 0;
+    color: @color-blue-1;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  p {
+    font-size: 1.05rem;
+    line-height: 1.5;
+    text-align: center;
+    margin-bottom: 20px;
+    
+    @media screen {
+      padding: 0 50px;
+    }
+
+  }
 }
 
 article section {
@@ -166,43 +187,6 @@ table {
 
 th {
   font-weight: bold;
-}
-
-#contributors {
-  overflow: hidden;
-  display: table;
-  margin: auto;
-
-  .contributor {
-    float:left;
-    padding: @spacing;
-    text-align: center;
-
-    h3 {
-      font-size: @font-size-h3;
-      text-align: center;
-      color: @color-blue-1;
-      font-weight: @font-weight;
-    }
-
-    .contributor-image {
-      .size(@contrib-img-size);
-      margin: @spacing;
-      .BoxShadowHelper(1);
-      .transition(0.2s ease-in-out all);
-
-      &:hover {
-        .BoxShadowHelper(3);
-        .scale3d(1.02, 1.02, 1.02);
-      }
-    }
-
-    .contrib_count {
-      text-align: center;
-      font-weight: @font-weight-bold;
-      color: @color-blue-1;
-    }
-  }
 }
 
 .iframe-container {
