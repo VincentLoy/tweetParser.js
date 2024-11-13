@@ -1,176 +1,148 @@
-tweetParser.js - [demo](http://vincentloy.github.io/tweetParser.js/)
-==================
-![Parse Twitter Usernames, Hashtags and URLs](https://d20uoazh5kuxrc.cloudfront.net/images/68747470733a2f2f6661726d312e73746.2e16d0ba.fill-1200x630.jpg)
-tweetParser.js Parse elements containing a tweets and turn URLS, @users &amp; #hashtags into working urls
 
-tweetParser is also available as a [Django Template Filter](https://github.com/VincentLoy/tweetparser-django-template-filter)
+# tweetParser.js - [Live Demo](http://vincentloy.github.io/tweetParser.js/)
 
-#### PARAMETERS
+![Parse Twitter Usernames, Hashtags, and URLs](https://d20uoazh5kuxrc.cloudfront.net/images/68747470733a2f2f6661726d312e73746.2e16d0ba.fill-1200x630.jpg)
 
-| Parameters | Type | default | description |
-| ------------- | ----------- | ----------- | ----------- |
-| urlClass  | String | tweet_link | css Class used for url in the tweet |
-| userClass | String | tweet_user | css Class used for @user profil url in the tweet |
-| hashtagClass | String | hashtag | css Class used for hashtags url in the tweet |
-| target | HTML attribute for anchor tags | _blank | target used for all <a> generated |
-| searchWithHashtags | Boolean | true | generate hashtag link, if true : "twitter.com/hashtag/", if false : "twitter.com/search?q=" |
-| ParseUsers | Boolean | true | will parse @users if is set to true |
-| parseUrls | Boolean | true | will parse URLS if is set to true |
-| parseHashtags | Boolean | true | will parse hashtags if is set to true |
+**tweetParser.js** is a JavaScript library that parses elements containing Twitter-like content, turning URLs, @usernames, and #hashtags into clickable links. This library supports both `x.com` (formerly `twitter.com`) links and is flexible enough for other domains.
 
-#### INITIALISATION
+## Key Features
+- Automatically converts URLs, @usernames, and #hashtags into clickable links.
+- Supports customization with CSS classes for easy styling.
+- Compatible with both Vanilla JavaScript and jQuery.
+- Option to hide the "@" symbol in @usernames and the protocol (`https://`) in URLs.
 
-##### You can install tweetParser.js with Bower
-if you want to use bower just type :
-```
-bower install tweetparser.js
-```
+---
 
-##### Or via npm
-```
+## Installation
+
+### Install with npm
+```bash
 npm install --save-dev tweetparser.js
 ```
 
-##### Add tweetParser.min.js to your HTML document
+### Include tweetParser.js in your HTML
 ```html
-    <script src="js/tweetParser.min.js"></script>
+<script src="path/to/tweetParser.min.js"></script>
 ```
 
+---
 
-##### Your tweet in your html document
+## Parameters
+
+| Parameter           | Type      | Default           | Description                                                                                   |
+|---------------------|-----------|-------------------|-----------------------------------------------------------------------------------------------|
+| `urlClass`          | `String`  | `tweet_link`      | CSS class used for URLs in the tweet text.                                                    |
+| `userClass`         | `String`  | `tweet_user`      | CSS class used for @user profile URLs in the tweet.                                           |
+| `hashtagClass`      | `String`  | `hashtag`         | CSS class used for hashtag URLs in the tweet.                                                 |
+| `target`            | `String`  | `_blank`          | HTML `target` attribute for all generated `<a>` tags.                                         |
+| `searchWithHashtags`| `Boolean` | `true`            | If `true`, hashtags link to `x.com/hashtag/`; if `false`, link to `x.com/search?q=`.          |
+| `parseUsers`        | `Boolean` | `true`            | Enables parsing of @user mentions if set to `true`.                                           |
+| `parseUrls`         | `Boolean` | `true`            | Enables parsing of URLs if set to `true`.                                                     |
+| `parseHashtags`     | `Boolean` | `true`            | Enables parsing of hashtags if set to `true`.                                                 |
+| `baseURL`           | `String`  | `https://x.com`   | Base domain for generated links (e.g., `https://x.com` or `https://twitter.com`).             |
+| `hideUserSymbol`    | `Boolean` | `false`           | If `true`, hides the "@" symbol in displayed usernames.                                       |
+| `hideProtocol`      | `Boolean` | `false`           | If `true`, hides "https://" or "http://" in the displayed text for URLs, but keeps it in `href`.|
+
+---
+
+## Getting Started
+
+### Basic Usage with JavaScript
+
+To start using `tweetParser.js`, apply it to your desired CSS selector. Here’s an example using the `.tweet` class:
+
 ```html
-    <p class="tweet">This is my awesome text only tweet ! #web #twitter @twitter http://www.twitter.com/ !!</p>
- ```
- 
- 
-##### getting started with tweetParser
-
-```javascript   
-    //basic usage
-    tweetParser('.tweet');
-    
-    //With Default parameters
-    tweetParser('.tweet', {
-        urlClass : "tweet_link", //this is default
-        userClass : "tweet_user", //this is default
-        hashtagClass : "hashtag", //this is default
-        target : "_blank", //this is default
-        searchWithHashtags : true //this is default
-        parseUsers : true,
-        parseHashtags : true,
-        parseUrls : true
-    });
-    
-    // Note that '.tweet' is your own CSS selector
+<p class="tweet">This is my awesome tweet! #web #twitter @twitter https://www.twitter.com/</p>
 ```
 
-###### Want to use it in the jQuery way ?
+```javascript
+// Basic usage
+tweetParser('.tweet');
+
+// Usage with custom parameters
+tweetParser('.tweet', {
+    urlClass: "tweet_link",           // CSS class for URLs
+    userClass: "tweet_user",           // CSS class for @user profiles
+    hashtagClass: "hashtag",           // CSS class for hashtags
+    target: "_blank",                  // Open links in new tab
+    searchWithHashtags: true,          // Hashtags link to hashtag search
+    parseUsers: true,                  // Parse @user mentions
+    parseHashtags: true,               // Parse hashtags
+    parseUrls: true,                   // Parse URLs
+    baseURL: "https://x.com",          // Base domain for links
+    hideUserSymbol: true,              // Hide "@" symbol in usernames
+    hideProtocol: true                 // Hide "https://" in displayed URLs
+});
+```
+
+### jQuery Usage
+
+If jQuery is included, `tweetParser.js` can be used as a jQuery plugin:
+
 ```html
-  <script src="path/to/jquery.min.js"></script>
-  <script src="path/to/tweetParser.js"></script>
-  ```
-  and call tweetParser like in v1 :
-  ```javascript
-  $([SELECTOR]).tweetParser([PARAMETERS]);
-  ```
+<script src="path/to/jquery.min.js"></script>
+<script src="path/to/tweetParser.min.js"></script>
+```
 
-#### RESULT EXAMPLE
-###### Check out the [demo](http://vincentloy.github.io/tweetParser.js/)
-you can customize your tweet with css classes used in parameters
-
-![Result After parsing tweets](https://farm9.staticflickr.com/8670/15852276268_221f9f8b85_o.png)
-
-
-### Contributing
-- Give it a [star](https://github.com/VincentLoy/tweetParser.js/stargazers) !
-- [Report a bug](https://github.com/VincentLoy/tweetParser.js/issues)
-- Tweet about it :)
-
-#### Pull Requests
-- **Solve a problem**
-- For code enhancement, use [JSLint](http://www.jslint.com/help.html) as a code quality tool.
-- Small is better than Big.
-
-
-#### Changelog
-
-+ v2.2.0
-  * Add Babel in dev dependecies
-  * Port dev code to es6 syntax
-
-+ v2.1.3
-  * Fix #10 - target link parameter issue
-
-+ v2.1.2
-  * Emojis support
-
-+ v2.1.1
-  * resolve [issue #9](https://github.com/VincentLoy/tweetParser.js/issues/9) - Wrap tweetParser and the jQuery compatibility file in the same file.
-
-+ v2.1.0
-  * Add a jQuery compatibility file.
-  * You can now use Both VanillaJS or jQuery.
-  ```html
-  <!-- To use it with jQuery : add tweetParser.js and jquery.tweetParser.js -->
-  <script src="dist/tweetParser.js"></script>
-  <script src="dev/jquery.tweetParser.js"></script>
-  ```
-  and call tweetParser like in v1 :
-  ```javascript
-  $([SELECTOR]).tweetParser([PARAMETERS]);
-  ```
-  It is always easier to use it without jQuery just don't add jquery.tweetParser.js and :
-  ```javascript
-  tweetParser([SELECTOR], [PARAMETERS]);
-  ```
-+ v2.0.2
-  * Code refactoring
-
-+ v2.0.1
-  * Fix issue #8 - is now Firefox compatible - replace innerText by textContent
-
-+ v2.0.0
-  * REMOVE jQuery dependecies...
-  * ...But it still easy to use it as simple as a jQuery Plugin.
-  * Improve URL regex : white spaces are not eaten anymore
-
-NB : For you, there is just some small changes in the syntax to call tweetParser.
-
-use 
 ```javascript
-tweetParser([SELECTOR], [PARAMETERS]);
-``` 
-instead of : 
-```javascript
-$([SELECTOR]).tweetParser([PARAMETERS]);
-``` 
+$('.tweet').tweetParser({
+    urlClass: "tweet_link",
+    userClass: "tweet_user",
+    hashtagClass: "hashtag",
+    target: "_blank",
+    searchWithHashtags: true,
+    parseUsers: true,
+    parseHashtags: true,
+    parseUrls: true,
+    baseURL: "https://x.com",
+    hideUserSymbol: true,
+    hideProtocol: true
+});
+```
 
-+ v1.3.1
-  * Remove Gruntfile to switch to gulpfile
-  * Prepare to publish to npm
-  * Improve the Demo
-  * Add sourcemaps
+---
 
-+ v1.3.0
-  * Improve (one more time) URL regex :raised_hands:
+## Result Example
 
-+ v1.2.1
-  * Better URL regex
+You can see the library in action in the [live demo](http://vincentloy.github.io/tweetParser.js/).
 
-+ v1.2.0
-  * add parameter parseUsers, parseHashtags, parseUrls
-  * Makeover on the demo
-  * JSLint passed
+---
 
-+ v1.1.0
-  * searchWithHashtags parameter added
+## Contributing
 
-    You can now choose where hashtags links will point to.
-    when searchWithHastags = true (default), tweetParser will generate the following link for each hashtags : "twitter.com/hashtag/THE_HASHTAG".  
-    if you set it to false, the link will be : "twitter.com/search?q=THE_HASHTAG"
-   
-  * code optimisation, remove useless var.
-  
-+ v1.0.0
+If you’d like to contribute:
+- **Star** the repository on [GitHub](https://github.com/VincentLoy/tweetParser.js/stargazers)
+- **Report issues** via the [Issues page](https://github.com/VincentLoy/tweetParser.js/issues)
+- **Tweet about it** to share with others!
 
-   Initial Version
+### Pull Requests
+- Ensure your contribution solves a problem.
+- For code quality, use [JSLint](http://www.jslint.com/help.html) before submitting.
+- Keep your contributions small and focused.
+
+---
+
+## Changelog
+
+### v3.0.0
+  * **Added `baseURL` parameter**: Allows easy switching between `x.com` and soon vintage `twitter.com`.
+  * **New `hideUserSymbol` option**: Hides the "@" symbol in usernames if set to `true`.
+  * **New `hideProtocol` option**: Hides "https://" or "http://" in displayed URLs, keeping the full URL in `href`.
+  * Remove bower support and uses. (was only used in demo).
+
+### Previous Versions
+
++ **v2.2.0**: Added Babel, ported to ES6 syntax.
++ **v2.1.3**: Fixed target link parameter issue (#10).
++ **v2.1.2**: Emoji support.
++ **v2.1.1**: Wrapped tweetParser and jQuery compatibility into the same file (#9).
++ **v2.1.0**: Introduced jQuery compatibility file for dual VanillaJS and jQuery support.
++ **v2.0.2**: Code refactoring.
++ **v2.0.1**: Firefox compatibility fix for `textContent`.
++ **v2.0.0**: Removed jQuery dependencies, but maintained jQuery compatibility as an option.
+
+---
+
+### License
+
+tweetParser.js is licensed under the MIT License.
